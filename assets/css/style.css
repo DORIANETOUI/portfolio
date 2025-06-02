@@ -1,0 +1,235 @@
+/* assets/css/style.css */ 
+
+:root {
+    /* Palette de couleurs pastels */
+    --pastel-blue: #E0F7FA;   /* Très clair, comme l'eau */
+    --pastel-pink: #FCE4EC;   /* Rose doux */
+    --pastel-green: #E8F5E9;  /* Vert menthe clair */
+    --pastel-yellow: #FFFDE7; /* Jaune très pâle */
+    --pastel-purple: #EDE7F6; /* Lavande très clair */
+
+    /* Couleurs de texte et éléments foncés */
+    --text-dark: #424242; /* Gris foncé doux */
+    --text-muted: #757575; /* Gris moyen */
+    --primary-color: #90CAF9; /* Bleu clair pour les accents */
+    --secondary-color: #FFCDD2; /* Rose clair secondaire */
+
+    /* Ombres douces */
+    --box-shadow-light: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Police principale */
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--pastel-yellow); /* Fond général légèrement jaune */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif; /* Police pour les titres */
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+/* Navbar personnalisée */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
+    box-shadow: var(--box-shadow-light);
+}
+
+.navbar-brand {
+    color: var(--text-dark) !important;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Avatar Placeholder dans la section Hero */
+.avatar-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: var(--pastel-blue); /* Couleur de fond de l'avatar */
+    border-radius: 50%; /* Cercle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.5), var(--box-shadow-light); /* Effet de bordure douce */
+   background-image: url('../img/avatar.png'); 
+    background-size: cover; 
+    background-position: center; 
+    /* Ou une icône font awesome si vous voulez */
+    /* content: '\f007'; /* Icône utilisateur */
+    /* font-family: 'Font Awesome 6 Free'; */
+    /* font-weight: 900; */
+}
+
+
+/* Section Hero */
+#hero {
+    background: linear-gradient(135deg, var(--pastel-blue) 0%, var(--pastel-pink) 100%); /* Dégradé doux */
+    color: #FCE4EC;
+    padding-top: 5rem; /* Pour éviter le chevauchement avec la navbar fixe */
+    padding-bottom: 5rem;
+}
+
+#hero h1, #hero p {
+    color: white; /* Texte blanc sur le dégradé */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%); /* Nécessite SASS, sinon une couleur hex fixe */
+    background-color: #64B5F6; /* Exemple d'une couleur plus foncée */
+    border-color: #64B5F6;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Sections générales */
+section {
+    padding: 80px 0; /* Plus d'espace pour les sections */
+}
+
+/* Section À Propos */
+#about {
+    background-color: var(--pastel-green);
+}
+
+#about ul li {
+    margin-bottom: 0.5rem;
+}
+
+#about i {
+    color: var(--primary-color);
+}
+
+/* Section Compétences */
+#skills {
+    background-color: var(--pastel-pink);
+}
+
+#skills .p-4 {
+    background-color: rgba(255, 255, 255, 0.8); /* Fond des cartes compétences */
+    border-radius: .5rem;
+    transition: transform 0.3s ease;
+}
+
+#skills .p-4:hover {
+    transform: translateY(-5px); /* Effet de léger soulèvement */
+}
+
+/* Section Projets */
+#projects {
+    background-color: var(--pastel-blue);
+}
+
+#projects .card {
+    border: none;
+    border-radius: .75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Pour que l'image ne déborde pas du border-radius */
+}
+
+#projects .card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}
+
+#projects .card-img-top {
+    border-top-left-radius: .75rem;
+    border-top-right-radius: .75rem;
+    height: 200px; /* Hauteur fixe pour les images de projet */
+    object-fit: cover; /* Recadre les images pour remplir l'espace */
+}
+
+/* Section Contact */
+#contact {
+    background-color: var(--pastel-purple);
+}
+
+#contact .form-control {
+    border-color: rgba(0,0,0,.1);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#contact .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 .25rem rgba(var(--primary-color), .25); /* Nécessite conversion en RGB ou variable CSS */
+    box-shadow: 0 0 0 .25rem rgba(144, 202, 249, 0.25); /* Exemple direct */
+}
+
+/* Footer */
+footer {
+    background-color: #37474F !important; /* Gris foncé pour le footer */
+    color: rgba(255, 255, 255, 0.8);
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Styles pour les icônes Font Awesome */
+.fa-3x {
+    font-size: 2.5rem; /* Ajuste la taille des icônes */
+}
+
+/* Styles pour les blocs Formation/Certifications */
+.info-block {
+    background-color: var(--pastel-purple); /* Une couleur pastel différente pour ces blocs */
+    color: var(--text-dark); /* Assurez-vous que le texte reste lisible */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Une très légère bordure */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+}
+
+.info-block:hover {
+    transform: translateY(-3px); /* Léger effet de soulèvement au survol */
+    box-shadow: 0 .25rem .5rem rgba(0,0,0,.1) !important; /* Ombre un peu plus prononcée */
+}
+
+/* Assurer que les titres dans info-block ont la bonne couleur */
+.info-block h3 {
+    color: var(--text-dark); /* Pour qu'ils ne soient pas en blanc si la section parente est très claire */
+}
+
+/* Responsive adjustments (optional, Bootstrap handles most) */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    #hero p {
+        font-size: 1rem;
+    }
+    section {
+        padding: 60px 0;
+    }
+}
