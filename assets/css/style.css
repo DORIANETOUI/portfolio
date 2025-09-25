@@ -160,7 +160,7 @@ section {
 #projects .card-img-top {
     border-top-left-radius: .75rem;
     border-top-right-radius: .75rem;
-    height: 200px; 
+    height: 300px; 
     object-fit: cover; 
 }
 
